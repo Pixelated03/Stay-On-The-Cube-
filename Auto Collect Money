@@ -1,0 +1,16 @@
+game['Run Service']:BindToRenderStep('CollectMoney',6,function()
+	for _,v in pairs(workspace.MoneyFolder:GetChildren())do
+		local c=game.Players.LocalPlayer.Character
+		if c then
+			local p=c.PrimaryPart
+			if p then
+				v.Position=p.Position
+				pcall(function()
+					v.Transparency=1
+					v.particles.Enabled=false
+					v.Outline.Visible=false
+				end)
+			end
+		end
+	end
+end)
