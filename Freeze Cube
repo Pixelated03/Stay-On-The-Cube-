@@ -1,0 +1,14 @@
+local w=workspace.CurrentMap.Model
+w.Base:Destroy()
+local b=Instance.new'Part'
+b.Size=Vector3.new()
+b.CanTouch=false
+b.CFrame=CFrame.new(Vector3.new(0, -10.34, 0))
+b.Anchored=true
+for _,v in pairs(w.CubeParts:GetChildren())do
+	local l=v:FindFirstChild'WeldConstraint'
+	if l then
+		l.Part1=b
+	end
+end
+b.Parent=w
