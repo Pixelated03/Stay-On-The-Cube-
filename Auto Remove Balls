@@ -1,0 +1,3 @@
+game['Run Service']:BindToRenderStep('RemoveBalls',6,function()
+	workspace.BallsFolder:ClearAllChildren()
+end)
